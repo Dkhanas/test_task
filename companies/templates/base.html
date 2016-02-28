@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Main company{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+{% for main_company in main_companies %}
+    <p>
+        <a href="{% url 'main_company' main_company.id %}">{{ main_company.name }} </a>
+         | {{ main_company.annual_earning }}K $
+    </p>
+{% endfor %}
+{% endblock %}
+</body>
+</html>
